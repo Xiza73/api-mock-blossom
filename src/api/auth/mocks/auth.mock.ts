@@ -6,28 +6,47 @@ import { serviceResponse } from '@/utils/service-response.util';
 
 import { User } from '../domain/user.interface';
 
+interface LoginResponse {
+  user: User;
+  tokens: {
+    access_token: string;
+  };
+}
+
 export const authMock = {
   verifyLogin: (code: ResponseCode) => {
     const response = {
-      [SuccessCode.SUCCESS_200]: serviceResponse<User>({
+      [SuccessCode.SUCCESS_200]: serviceResponse<LoginResponse>({
         status: ResponseStatus.Success,
         httpStatusCode: StatusCodes.OK,
         message: 'Success',
         responseCode: SuccessCode.SUCCESS_200,
         responseObject: {
-          user_id: 1,
-          first_name: 'John',
-          last_name: 'Doe',
-          document_number: '123456789',
-          position: 'Developer',
-          supervisor: 1,
-          phone_number: '123456789',
-          email: 'john.doe@example.com',
-          password: '',
-          birthday: '1990-01-01',
-          address: '123 Main St',
-          residential_address: '123 Main St',
-          token: 'example-token',
+          user: {
+            user_id: 1,
+            first_name: 'John',
+            last_name: 'Doe',
+            document_number: '123456789',
+            position: 'Developer',
+            company_id: 1,
+            supervisor: 1,
+            phone_number: '123456789',
+            email: 'john.doe@example.com',
+            password: '',
+            birthday: '1990-01-01',
+            address: '123 Main St',
+            residential_address: '123 Main St',
+            cognito_sub: '123 Main St',
+            is_deleted: false,
+            company: {
+              company_id: 1,
+              company_name: 'John Doe',
+            },
+            created_at: '2025-08-02T11:22:40.475Z',
+          },
+          tokens: {
+            access_token: 'example-token',
+          },
         },
       }),
       [ErrorCode.UNKNOWN_500]: serviceResponse({
@@ -46,31 +65,43 @@ export const authMock = {
 
   login: (code: ResponseCode) => {
     const response = {
-      [SuccessCode.SUCCESS_200]: serviceResponse<User>({
+      [SuccessCode.SUCCESS_200]: serviceResponse<LoginResponse>({
         status: ResponseStatus.Success,
         httpStatusCode: StatusCodes.OK,
         message: 'Success',
         responseCode: SuccessCode.SUCCESS_200,
         responseObject: {
-          user_id: 1,
-          first_name: 'John',
-          last_name: 'Doe',
-          document_number: '123456789',
-          position: 'Developer',
-          supervisor: 1,
-          phone_number: '123456789',
-          email: 'john.doe@example.com',
-          password: '',
-          birthday: '1990-01-01',
-          address: '123 Main St',
-          residential_address: '123 Main St',
-          token: 'example-token',
+          user: {
+            user_id: 1,
+            first_name: 'John',
+            last_name: 'Doe',
+            document_number: '123456789',
+            position: 'Developer',
+            company_id: 1,
+            supervisor: 1,
+            phone_number: '123456789',
+            email: 'john.doe@example.com',
+            password: '',
+            birthday: '1990-01-01',
+            address: '123 Main St',
+            residential_address: '123 Main St',
+            cognito_sub: '123 Main St',
+            is_deleted: false,
+            company: {
+              company_id: 1,
+              company_name: 'John Doe',
+            },
+            created_at: '2025-08-02T11:22:40.475Z',
+          },
+          tokens: {
+            access_token: 'example-token',
+          },
         },
       }),
       [ErrorCode.UNKNOWN_500]: serviceResponse({
         status: ResponseStatus.Failed,
         httpStatusCode: StatusCodes.INTERNAL_SERVER_ERROR,
-        message: 'Unexpected error',
+        message: 'User does not exist.',
         responseCode: ErrorCode.UNKNOWN_500,
         responseObject: {
           error: 'Failed',

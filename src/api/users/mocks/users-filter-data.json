@@ -1,0 +1,273 @@
+[
+  {
+    "user_id": 1,
+    "first_name": "ohn",
+    "last_name": "Doe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doe@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "23 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "supervisor_user": {
+      "user_id": 10,
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.com",
+      "position": "Developer"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  },
+  {
+    "user_id": 2,
+    "first_name": "John",
+    "last_name": "Doe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doeasdasdasdasdasdasd@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "123 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  },
+  {
+    "user_id": 3,
+    "first_name": "John",
+    "last_name": "Doe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doe@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "123 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  },
+  {
+    "user_id": 4,
+    "first_name": "John",
+    "last_name": "Doe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doe@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "123 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  },
+  {
+    "user_id": 5,
+    "first_name": "John",
+    "last_name": "Doe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doe@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "123 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  },
+  {
+    "user_id": 6,
+    "first_name": "John",
+    "last_name": "Doe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doe@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "123 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  },
+  {
+    "user_id": 7,
+    "first_name": "John",
+    "last_name": "Doe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doe@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "123 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  },
+  {
+    "user_id": 8,
+    "first_name": "John",
+    "last_name": "oe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doe@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "123 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  },
+  {
+    "user_id": 9,
+    "first_name": "John",
+    "last_name": "Doe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doe@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "123 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  },
+  {
+    "user_id": 10,
+    "first_name": "John",
+    "last_name": "Doe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doe@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "123 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  },
+  {
+    "user_id": 11,
+    "first_name": "John",
+    "last_name": "Doe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doe@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "123 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  },
+  {
+    "user_id": 12,
+    "first_name": "John",
+    "last_name": "Doe",
+    "document_number": "123456789",
+    "position": "Developer",
+    "company_id": 1,
+    "supervisor": 1,
+    "phone_number": "123456789",
+    "email": "john.doe@example.com",
+    "password": "",
+    "birthday": "1990-01-01",
+    "address": "123 Main St",
+    "residential_address": "123 Main St",
+    "cognito_sub": "123 Main St",
+    "is_deleted": false,
+    "company": {
+      "company_id": 1,
+      "company_name": "John Doe"
+    },
+    "created_at": "2025-08-02T11:22:40.475Z"
+  }
+]

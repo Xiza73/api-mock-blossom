@@ -10,7 +10,7 @@ export enum ResponseStatus {
 export interface ServiceResponseProps<T = null> {
   status: ResponseStatus;
   httpStatusCode: StatusCodes;
-  message: string;
+  message: string | string[];
   responseCode: ResponseCode;
   responseObject: T;
 }
