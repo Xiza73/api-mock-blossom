@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
 
-import { getUserById, userListParamError, usersList } from '@/api/users/mocks/users-filter.mock';
+import { getUserById, usersList } from '@/api/users/mocks/users-filter.mock';
 import { handleServiceResponse } from '@/utils/http-handlers.util';
 import { sleep } from '@/utils/sleep.util';
 

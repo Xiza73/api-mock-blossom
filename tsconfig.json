@@ -4,17 +4,14 @@
     "module": "es2022",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
-    "lib": [
-      "es6"
-    ],
+    "lib": ["es6"],
     "moduleResolution": "Node",
     "emitDecoratorMetadata": true,
     "outDir": "dist",
     "importsNotUsedAsValues": "remove",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,
@@ -29,17 +26,10 @@
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "ignoreDeprecations": "5.0",
-    "types": [
-      "vitest/globals"
-    ]
+    "types": ["vitest/globals"]
   },
+  "hooks": ["copy-files"],
   "extends": [],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
-  "include": [
-    "src/**/*.ts",
-    "src/custom.d.ts"
-  ],
+  "exclude": ["node_modules", "dist"],
+  "include": ["src/**/*.ts", "src/custom.d.ts"]
 }

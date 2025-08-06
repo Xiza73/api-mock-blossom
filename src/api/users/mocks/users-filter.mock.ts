@@ -1,10 +1,8 @@
 import { StatusCodes } from 'http-status-codes';
-import path from 'path';
 
 import { User } from '@/api/auth/domain/user.interface';
 import { ErrorCode, SuccessCode } from '@/domain/code-mapper.map';
 import { ResponseStatus } from '@/domain/response.interface';
-import { readFile } from '@/utils/file.util';
 import { paginateArray } from '@/utils/paginate-array.util';
 import { serviceResponse } from '@/utils/service-response.util';
 
@@ -20,8 +18,14 @@ interface UserListResponse {
   };
 }
 
+const getUsersFile = async (): Promise<User[]> => {
+  const data = (await import('./users-filter-data.json')).default as User[];
+
+  return data;
+};
+
 export const usersList = async (page: number) => {
-  const data = await readFile(path.join(__dirname, './users-filter-data.json'));
+  const data = await getUsersFile();
 
   return serviceResponse<UserListResponse>({
     status: ResponseStatus.Success,
@@ -54,7 +58,7 @@ export const userListParamError = serviceResponse({
 });
 
 export const getUserById = async (id: string) => {
-  const data = await readFile<User[]>(path.join(__dirname, './users-filter-data.json'));
+  const data = await getUsersFile();
   const user = data.find((user) => user.user_id.toString() === id);
 
   return serviceResponse<User | undefined>({
