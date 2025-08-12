@@ -66,6 +66,7 @@ _app.use(
       callback(new Error('Not allowed by CORS'));
     },
     credentials: true,
+    exposedHeaders: ['Content-Disposition'],
   }),
   routes
 );

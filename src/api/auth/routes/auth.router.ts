@@ -37,5 +37,20 @@ export const authRouter: Router = (() => {
     );
   });
 
+  router.post('/register', async (_req: Request, res: Response) => {
+    await sleep(1000);
+
+    handleServiceResponse(
+      serviceResponse({
+        status: ResponseStatus.Success,
+        httpStatusCode: StatusCodes.OK,
+        message: 'Registro exitoso',
+        responseCode: SuccessCode.SUCCESS_200,
+        responseObject: true,
+      }),
+      res
+    );
+  });
+
   return router;
 })();

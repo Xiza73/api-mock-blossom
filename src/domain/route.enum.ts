@@ -12,7 +12,7 @@ export const Module = {
 export type Module = (typeof Module)[keyof typeof Module];
 
 export const ModulePath = {
-  [ModuleKey.AUTH]: '/auth',
+  [ModuleKey.AUTH]: '',
   [ModuleKey.USERS]: '/users',
 } as const;
 export type ModulePath = (typeof ModulePath)[keyof typeof ModulePath];
