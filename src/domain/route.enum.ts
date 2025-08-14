@@ -3,17 +3,23 @@ import { Router } from 'express';
 enum ModuleKey {
   AUTH = 'AUTH',
   USERS = 'USERS',
+  ACCOUNTS = 'ACCOUNTS',
+  UNITS = 'UNITS',
 }
 
 export const Module = {
   [ModuleKey.AUTH]: 'auth',
   [ModuleKey.USERS]: 'users',
+  [ModuleKey.ACCOUNTS]: 'accounts',
+  [ModuleKey.UNITS]: 'units',
 } as const;
 export type Module = (typeof Module)[keyof typeof Module];
 
 export const ModulePath = {
   [ModuleKey.AUTH]: '',
   [ModuleKey.USERS]: '/users',
+  [ModuleKey.ACCOUNTS]: '/accounts',
+  [ModuleKey.UNITS]: '/units',
 } as const;
 export type ModulePath = (typeof ModulePath)[keyof typeof ModulePath];
 

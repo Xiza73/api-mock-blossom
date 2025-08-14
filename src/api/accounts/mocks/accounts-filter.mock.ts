@@ -1,33 +1,34 @@
 import { StatusCodes } from 'http-status-codes';
 
-import { User } from '@/api/auth/domain/user.interface';
 import { ErrorCode, SuccessCode } from '@/domain/code-mapper.map';
 import { Pagination } from '@/domain/pagination.interface';
 import { ResponseStatus } from '@/domain/response.interface';
 import { paginateArray } from '@/utils/paginate-array.util';
 import { serviceResponse } from '@/utils/service-response.util';
 
-interface UserListResponse {
-  users: User[];
+import { Account } from '../domain/account.interface';
+
+interface AccountsListResponse {
+  accounts: Account[];
   pagination: Pagination;
 }
 
-const getUsersFile = async (): Promise<User[]> => {
-  const data = (await import('./users-filter-data.json')).default as User[];
+const getAccountsFile = async (): Promise<Account[]> => {
+  const data = (await import('./accounts-filter-data.json')).default as Account[];
 
   return data;
 };
 
-export const usersList = async (page: number) => {
-  const data = await getUsersFile();
+export const accountsList = async (page: number) => {
+  const data = await getAccountsFile();
 
-  return serviceResponse<UserListResponse>({
+  return serviceResponse<AccountsListResponse>({
     status: ResponseStatus.Success,
     httpStatusCode: StatusCodes.OK,
     message: 'Success',
     responseCode: SuccessCode.SUCCESS_200,
     responseObject: {
-      users: paginateArray(data, page),
+      accounts: paginateArray(data, page),
       pagination: {
         total: 12,
         page: 1,
@@ -40,7 +41,7 @@ export const usersList = async (page: number) => {
   });
 };
 
-export const userListParamError = serviceResponse({
+export const accountListParamError = serviceResponse({
   status: ResponseStatus.Failed,
   httpStatusCode: StatusCodes.BAD_REQUEST,
   message: [
@@ -51,15 +52,15 @@ export const userListParamError = serviceResponse({
   responseObject: 'Bad request',
 });
 
-export const getUserById = async (id: string) => {
-  const data = await getUsersFile();
-  const user = data.find((user) => user.user_id.toString() === id);
+export const getAccountById = async (id: string) => {
+  const data = await getAccountsFile();
+  const account = data.find((account) => account.account_id.toString() === id);
 
-  return serviceResponse<User | undefined>({
+  return serviceResponse<Account | undefined>({
     status: ResponseStatus.Success,
     httpStatusCode: StatusCodes.OK,
     message: 'Success2',
     responseCode: SuccessCode.SUCCESS_200,
-    responseObject: user,
+    responseObject: account,
   });
 };
