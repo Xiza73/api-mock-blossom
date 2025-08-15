@@ -3,6 +3,7 @@ import { Router } from 'express';
 import { accountsRouter } from '@/api/accounts/routes/accounts.route';
 import { unitsRouter } from '@/api/accounts/routes/units.route';
 import { authRouter } from '@/api/auth/routes/auth.router';
+import { interventionTypesRouter } from '@/api/intervention-types/routes/intervention-types.route';
 import { usersRouter } from '@/api/users/routes/users.route';
 import { ModulePath, Route } from '@/domain/route.enum';
 
@@ -22,6 +23,10 @@ const routeList: Route[] = [
   {
     path: ModulePath.UNITS,
     router: unitsRouter,
+  },
+  {
+    path: ModulePath.INTERVENTION_TYPES,
+    router: interventionTypesRouter,
   },
 ];
 

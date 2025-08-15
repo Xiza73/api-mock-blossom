@@ -5,6 +5,7 @@ enum ModuleKey {
   USERS = 'USERS',
   ACCOUNTS = 'ACCOUNTS',
   UNITS = 'UNITS',
+  INTERVENTION_TYPES = 'INTERVENTION_TYPES',
 }
 
 export const Module = {
@@ -12,6 +13,7 @@ export const Module = {
   [ModuleKey.USERS]: 'users',
   [ModuleKey.ACCOUNTS]: 'accounts',
   [ModuleKey.UNITS]: 'units',
+  [ModuleKey.INTERVENTION_TYPES]: 'intervention-types',
 } as const;
 export type Module = (typeof Module)[keyof typeof Module];
 
@@ -20,6 +22,7 @@ export const ModulePath = {
   [ModuleKey.USERS]: '/users',
   [ModuleKey.ACCOUNTS]: '/accounts',
   [ModuleKey.UNITS]: '/units',
+  [ModuleKey.INTERVENTION_TYPES]: '/intervention-types',
 } as const;
 export type ModulePath = (typeof ModulePath)[keyof typeof ModulePath];
 
