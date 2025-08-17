@@ -1,0 +1,38 @@
+[
+  {
+    "incident_type_id": 1,
+    "type_name": "Incidente de trabajo",
+    "is_deleted": false,
+    "company_id": 1,
+    "created_at": "2022-01-01T00:00:00.000Z",
+    "updated_at": "2022-01-01T00:00:00.000Z",
+    "company": {
+      "company_id": 1,
+      "company_name": "Empresa A"
+    }
+  },
+  {
+    "incident_type_id": 2,
+    "type_name": "Incidente de trabajo 2",
+    "is_deleted": false,
+    "company_id": 1,
+    "created_at": "2022-01-01T00:00:00.000Z",
+    "updated_at": "2022-01-01T00:00:00.000Z",
+    "company": {
+      "company_id": 1,
+      "company_name": "Empresa B"
+    }
+  },
+  {
+    "incident_type_id": 3,
+    "type_name": "Incidente de trabajo 3",
+    "is_deleted": false,
+    "company_id": 1,
+    "created_at": "2022-01-01T00:00:00.000Z",
+    "updated_at": "2022-01-01T00:00:00.000Z",
+    "company": {
+      "company_id": 1,
+      "company_name": "Empresa C"
+    }
+  }
+]

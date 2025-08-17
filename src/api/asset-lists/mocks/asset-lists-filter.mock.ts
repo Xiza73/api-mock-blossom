@@ -6,29 +6,29 @@ import { ResponseStatus } from '@/domain/response.interface';
 import { paginateArray } from '@/utils/paginate-array.util';
 import { serviceResponse } from '@/utils/service-response.util';
 
-import { InterventionType } from '../domain/intervention-type.interface';
+import { AssetList } from '../domain/asset-list.interface';
 
-interface InterventionTypeListResponse {
-  interventionTypes: InterventionType[];
+interface AssetListListResponse {
+  assetLists: AssetList[];
   pagination: Pagination;
 }
 
-const getInterventionTypesFile = async (): Promise<InterventionType[]> => {
-  const data = (await import('./intervention-types-filter.data.json')).default as InterventionType[];
+const getAssetListsFile = async (): Promise<AssetList[]> => {
+  const data = (await import('./asset-lists-filter.data.json')).default as AssetList[];
 
   return data;
 };
 
-export const interventionTypesList = async (page: number) => {
-  const data = await getInterventionTypesFile();
+export const assetListsList = async (page: number) => {
+  const data = await getAssetListsFile();
 
-  return serviceResponse<InterventionTypeListResponse>({
+  return serviceResponse<AssetListListResponse>({
     status: ResponseStatus.Success,
     httpStatusCode: StatusCodes.OK,
     message: 'Success',
     responseCode: SuccessCode.SUCCESS_200,
     responseObject: {
-      interventionTypes: paginateArray(data, page),
+      assetLists: paginateArray(data, page),
       pagination: {
         total: 2,
         page: 1,
@@ -41,7 +41,7 @@ export const interventionTypesList = async (page: number) => {
   });
 };
 
-export const interventionTypesListParamError = serviceResponse({
+export const assetListsListParamError = serviceResponse({
   status: ResponseStatus.Failed,
   httpStatusCode: StatusCodes.BAD_REQUEST,
   message: [
@@ -52,15 +52,28 @@ export const interventionTypesListParamError = serviceResponse({
   responseObject: 'Bad request',
 });
 
-export const getInterventionTypeById = async (id: string) => {
-  const data = await getInterventionTypesFile();
-  const interventionType = data.find((interventionType) => interventionType.intervention_type_id.toString() === id);
+export const getAssetListById = async (id: string) => {
+  const data = await getAssetListsFile();
+  const assetList = data.find((assetList) => assetList.asset_list_id.toString() === id);
 
-  return serviceResponse<InterventionType | undefined>({
+  return serviceResponse<AssetList | undefined>({
     status: ResponseStatus.Success,
     httpStatusCode: StatusCodes.OK,
     message: 'Success2',
     responseCode: SuccessCode.SUCCESS_200,
-    responseObject: interventionType,
+    responseObject: assetList,
+  });
+};
+
+export const getAssetListByCompanyId = async (companyId: string) => {
+  const data = await getAssetListsFile();
+  const assetList = data.find((assetList) => assetList.company_id.toString() === companyId);
+
+  return serviceResponse<AssetList | undefined>({
+    status: ResponseStatus.Success,
+    httpStatusCode: StatusCodes.OK,
+    message: 'Success2',
+    responseCode: SuccessCode.SUCCESS_200,
+    responseObject: assetList,
   });
 };

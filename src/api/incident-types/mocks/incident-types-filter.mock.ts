@@ -6,29 +6,29 @@ import { ResponseStatus } from '@/domain/response.interface';
 import { paginateArray } from '@/utils/paginate-array.util';
 import { serviceResponse } from '@/utils/service-response.util';
 
-import { InterventionType } from '../domain/intervention-type.interface';
+import { IncidentType } from '../domain/incident-type.interface';
 
-interface InterventionTypeListResponse {
-  interventionTypes: InterventionType[];
+interface IncidentTypeListResponse {
+  incidentTypes: IncidentType[];
   pagination: Pagination;
 }
 
-const getInterventionTypesFile = async (): Promise<InterventionType[]> => {
-  const data = (await import('./intervention-types-filter.data.json')).default as InterventionType[];
+const getIncidentTypesFile = async (): Promise<IncidentType[]> => {
+  const data = (await import('./incident-types-filter.data.json')).default as IncidentType[];
 
   return data;
 };
 
-export const interventionTypesList = async (page: number) => {
-  const data = await getInterventionTypesFile();
+export const incidentTypesList = async (page: number) => {
+  const data = await getIncidentTypesFile();
 
-  return serviceResponse<InterventionTypeListResponse>({
+  return serviceResponse<IncidentTypeListResponse>({
     status: ResponseStatus.Success,
     httpStatusCode: StatusCodes.OK,
     message: 'Success',
     responseCode: SuccessCode.SUCCESS_200,
     responseObject: {
-      interventionTypes: paginateArray(data, page),
+      incidentTypes: paginateArray(data, page),
       pagination: {
         total: 2,
         page: 1,
@@ -41,7 +41,7 @@ export const interventionTypesList = async (page: number) => {
   });
 };
 
-export const interventionTypesListParamError = serviceResponse({
+export const incidentTypesListParamError = serviceResponse({
   status: ResponseStatus.Failed,
   httpStatusCode: StatusCodes.BAD_REQUEST,
   message: [
@@ -52,15 +52,15 @@ export const interventionTypesListParamError = serviceResponse({
   responseObject: 'Bad request',
 });
 
-export const getInterventionTypeById = async (id: string) => {
-  const data = await getInterventionTypesFile();
-  const interventionType = data.find((interventionType) => interventionType.intervention_type_id.toString() === id);
+export const getIncidentTypeById = async (id: string) => {
+  const data = await getIncidentTypesFile();
+  const incidentType = data.find((incidentType) => incidentType.incident_type_id.toString() === id);
 
-  return serviceResponse<InterventionType | undefined>({
+  return serviceResponse<IncidentType | undefined>({
     status: ResponseStatus.Success,
     httpStatusCode: StatusCodes.OK,
     message: 'Success2',
     responseCode: SuccessCode.SUCCESS_200,
-    responseObject: interventionType,
+    responseObject: incidentType,
   });
 };

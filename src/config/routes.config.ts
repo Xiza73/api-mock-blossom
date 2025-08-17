@@ -2,7 +2,10 @@ import { Router } from 'express';
 
 import { accountsRouter } from '@/api/accounts/routes/accounts.route';
 import { unitsRouter } from '@/api/accounts/routes/units.route';
+import { activityListsRouter } from '@/api/activity-lists/routes/activity-lists.route';
+import { assetListsRouter } from '@/api/asset-lists/routes/asset-lists.route';
 import { authRouter } from '@/api/auth/routes/auth.router';
+import { incidentTypesRouter } from '@/api/incident-types/routes/incident-types.route';
 import { interventionTypesRouter } from '@/api/intervention-types/routes/intervention-types.route';
 import { usersRouter } from '@/api/users/routes/users.route';
 import { ModulePath, Route } from '@/domain/route.enum';
@@ -27,6 +30,18 @@ const routeList: Route[] = [
   {
     path: ModulePath.INTERVENTION_TYPES,
     router: interventionTypesRouter,
+  },
+  {
+    path: ModulePath.INCIDENT_TYPES,
+    router: incidentTypesRouter,
+  },
+  {
+    path: ModulePath.ASSET_LISTS,
+    router: assetListsRouter,
+  },
+  {
+    path: ModulePath.ACTIVITY_LISTS,
+    router: activityListsRouter,
   },
 ];
 
