@@ -10,9 +10,10 @@ export const usersRouter: Router = (() => {
   router.post('/filter', async (req: Request, res: Response) => {
     await sleep(1000);
     const page = req.body.page;
+    const limit = req.body.limit;
 
     // handleServiceResponse(userListParamError, res);
-    handleServiceResponse(await usersList(page || 1), res);
+    handleServiceResponse(await usersList(page || 1, limit || 10), res);
   });
 
   router.get('/:id', async (req: Request, res: Response) => {

@@ -18,8 +18,18 @@ const getUsersFile = async (): Promise<User[]> => {
   return data;
 };
 
-export const usersList = async (page: number) => {
-  const data = await getUsersFile();
+export const usersList = async (page: number, limit: number = 10) => {
+  const initialData = await getUsersFile();
+  const moreData = initialData.map((user) => ({
+    ...user,
+    user_id: user.user_id + 14,
+  }));
+  const moreMoreData = initialData.map((user) => ({
+    ...user,
+    user_id: user.user_id + 28,
+  }));
+
+  const data = [...initialData, ...moreData, ...moreMoreData];
 
   return serviceResponse<UserListResponse>({
     status: ResponseStatus.Success,
@@ -27,14 +37,14 @@ export const usersList = async (page: number) => {
     message: 'Success',
     responseCode: SuccessCode.SUCCESS_200,
     responseObject: {
-      users: paginateArray(data, page),
+      users: paginateArray(data, page, limit),
       pagination: {
-        total: 12,
-        page: 1,
-        limit: 10,
-        totalPages: 2,
-        hasNext: true,
-        hasPrev: false,
+        total: data.length,
+        page,
+        limit,
+        totalPages: Math.ceil(data.length / limit),
+        hasNext: page < Math.ceil(data.length / limit),
+        hasPrev: page > 1,
       },
     },
   });
