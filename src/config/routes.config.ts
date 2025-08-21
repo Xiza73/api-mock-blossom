@@ -7,6 +7,7 @@ import { assetListsRouter } from '@/api/asset-lists/routes/asset-lists.route';
 import { authRouter } from '@/api/auth/routes/auth.router';
 import { incidentTypesRouter } from '@/api/incident-types/routes/incident-types.route';
 import { interventionTypesRouter } from '@/api/intervention-types/routes/intervention-types.route';
+import { s3Router } from '@/api/s3/routes/s3.route';
 import { usersRouter } from '@/api/users/routes/users.route';
 import { ModulePath, Route } from '@/domain/route.enum';
 
@@ -42,6 +43,10 @@ const routeList: Route[] = [
   {
     path: ModulePath.ACTIVITY_LISTS,
     router: activityListsRouter,
+  },
+  {
+    path: ModulePath.S3,
+    router: s3Router,
   },
 ];
 

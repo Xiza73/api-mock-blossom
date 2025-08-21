@@ -2,6 +2,7 @@ import { Request, Response, Router } from 'express';
 
 import { getUserById, usersList } from '@/api/users/mocks/users-filter.mock';
 import { handleServiceResponse } from '@/utils/http-handlers.util';
+import { messageResponse } from '@/utils/mesage-response.util';
 import { sleep } from '@/utils/sleep.util';
 
 export const usersRouter: Router = (() => {
@@ -47,6 +48,13 @@ export const usersRouter: Router = (() => {
     } catch (_error) {
       res.status(500).send('Error generating PDF');
     }
+  });
+
+  router.put('/:id/password', async (req: Request, res: Response) => {
+    await sleep(1000);
+    // const id = req.params.id;
+
+    handleServiceResponse(messageResponse('Password Updated', 200), res);
   });
 
   router.put('/:id', async (req: Request, res: Response) => {
